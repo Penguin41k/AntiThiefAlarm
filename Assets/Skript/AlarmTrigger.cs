@@ -9,7 +9,7 @@ public class AlarmTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<ThiefController>(out ThiefController thief))
+        if (collision.TryGetComponent<ThiefMover>(out ThiefMover thief))
         {
             Debug.Log("Зашел");
             int numberOfEvent = 0;
@@ -19,7 +19,7 @@ public class AlarmTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<ThiefController>(out ThiefController thief))
+        if (collision.TryGetComponent<ThiefMover>(out ThiefMover thief))
         {
             Debug.Log("Вышел");
             int numberOfEvent = 1;
