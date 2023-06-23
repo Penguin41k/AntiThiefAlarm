@@ -6,30 +6,29 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private float _volumeChangeSpeed;
+    [SerializeField, Range (0, 1)] private float _targetVolumeInOnState;
 
-    private float _targetVolume;
+    private float _volumeInOffState = 0;
     private Coroutine _changeVolumeJob;
 
     public void TurnOn()
     {
-        _targetVolume = 1;
-        StartChangeVolume();
+         StartChangeVolume(_targetVolumeInOnState);
     }
 
     public void TurnOff()
     {
-        _targetVolume = 0;
-        StartChangeVolume();
+         StartChangeVolume(_volumeInOffState);
     }
 
-    private void StartChangeVolume()
+    private void StartChangeVolume(float targetVolume)
     {
         if (_changeVolumeJob != null)
         {
             StopCoroutine(_changeVolumeJob);
         }
 
-        _changeVolumeJob = StartCoroutine(ChangeVolume(_targetVolume));
+        _changeVolumeJob = StartCoroutine(ChangeVolume(targetVolume));
     }
 
     private IEnumerator ChangeVolume(float targetVolume)

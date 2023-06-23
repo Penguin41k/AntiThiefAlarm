@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _duration: 0
 --- !u!212 &271653043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -684,6 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 937828481}
   _volumeChangeSpeed: 0.3
+  _targetVolumeInOnState: 0.61
 --- !u!114 &937828483
 MonoBehaviour:
   m_ObjectHideFlags: 0

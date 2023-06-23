@@ -11,7 +11,6 @@ public class AlarmTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent<ThiefMover>(out ThiefMover thief))
         {
-            Debug.Log("Зашел");
             int numberOfEvent = 0;
             _activated[numberOfEvent].Invoke();
         }
@@ -21,7 +20,6 @@ public class AlarmTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent<ThiefMover>(out ThiefMover thief))
         {
-            Debug.Log("Вышел");
             int numberOfEvent = 1;
             _activated[numberOfEvent].Invoke();
         }
